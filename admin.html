@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Farmhouse</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">🌿 Farmhouse</div>
+
+      <nav class="admin-menu">
+        <a href="#" class="active">Dashboard</a>
+        <a href="index.html">Website</a>
+        <a href="packages.html">Packages</a>
+        <a href="booking.html">Booking Page</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+
+      <header class="admin-topbar">
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p>Manage farmhouse bookings, payments and calendar.</p>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </header>
+
+      <!-- STATS -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <p>Total Bookings</p>
+          <h2 id="totalBookings">0</h2>
+        </div>
+
+        <div class="stat-card">
+          <p>Total Guests</p>
+          <h2 id="totalGuests">0</h2>
+        </div>
+
+        <div class="stat-card">
+          <p>Upcoming Bookings</p>
+          <h2 id="upcomingBookings">0</h2>
+        </div>
+
+        <div class="stat-card">
+          <p>Monthly Income</p>
+          <h2 id="monthlyIncome">₹0</h2>
+        </div>
+      </section>
+
+      <!-- CALENDAR -->
+      <section class="dashboard-card">
+        <div class="card-header">
+          <div>
+            <h2>Booking Calendar</h2>
+            <p>Stats update according to the visible month.</p>
+          </div>
+        </div>
+
+        <div id="calendar"></div>
+      </section>
+
+      <!-- TABLE -->
+      <section class="dashboard-card">
+        <div class="card-header">
+          <div>
+            <h2>All Bookings</h2>
+            <p>Customer details and payment records.</p>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table id="bookingTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Date</th>
+                <th>Guests</th>
+                <th>Package</th>
+                <th>Amount</th>
+                <th>Payment</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <div id="toastContainer"></div>
+
+<script src="js/toast.js"></script>
+<script src="js/admin.js"></script> 
+  
+</body>
+</html>
