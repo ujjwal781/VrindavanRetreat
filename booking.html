@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - Farmhouse</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">🌿 Farmhouse</div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html">Contact</a>
+      <a href="packages.html">Packages</a>
+    </nav>
+
+    <button class="login-btn">Login</button>
+  </header>
+
+  <section class="page-header">
+    <h1>Book Your Stay</h1>
+    <p>Reserve your perfect getaway</p>
+  </section>
+
+  <section class="booking">
+    <div class="container booking-container">
+
+      <div class="booking-form">
+        <h2>Booking Details</h2>
+
+        <form id="bookingForm">
+          <input type="text" id="name" placeholder="Full Name" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="tel" id="phone" placeholder="Phone Number" required>
+          <input type="text" id="date" placeholder="Select booking date" autocomplete="off" readonly required>
+          <input type="number" id="guests" placeholder="Number of Guests" min="1" required>
+          <select id="package" required>
+          <option value="">Select Package</option>
+          <option value="Silver">Silver - ₹6000</option>
+          <option value="Golden">Golden - ₹15000</option>
+          <option value="Premium">Premium - ₹20000</option>
+          </select>
+
+<input type="number" id="amount" placeholder="Amount" readonly required>
+
+<select id="paymentMode" required>
+  <option value="cash">Cash Payment</option>
+</select>
+          
+          
+
+          <button type="submit" class="primary-btn" id="submitBtn">
+            Confirm Booking
+          </button>
+        </form>
+
+        <p class="booking-note">
+          Full-day bookings only. One booking per day allowed.
+        </p>
+      </div>
+
+      <div class="booking-summary">
+        <h3>Your Booking</h3>
+
+        <p><strong>Name:</strong> <span id="summaryName">-</span></p>
+        <p><strong>Email:</strong> <span id="summaryEmail">-</span></p>
+        <p><strong>Phone:</strong> <span id="summaryPhone">-</span></p>
+        <p><strong>Date:</strong> <span id="summaryDate">-</span></p>
+        <p><strong>Guests:</strong> <span id="summaryGuests">-</span></p>
+        <p><strong>Amount:</strong> ₹<span id="summaryAmount">-</span></p>
+        <p><strong>Payment:</strong> <span id="summaryPayment">Cash</span></p>
+        <p><strong>Package:</strong> <span id="summaryPackage">-</span></p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>
+        <h3>🌿 Farmhouse</h3>
+        <p>Luxury stay surrounded by nature.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS (IMPORTANT ORDER) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/booking.js"></script>
+
+<div id="toastContainer"></div>
+</body>
+</html>
